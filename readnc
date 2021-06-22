@@ -1,0 +1,18 @@
+echo "# shuabiaomaimeng" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/shuabiaomaimeng/shuabiaomaimeng.git
+git push -u origin main
+
+ncData = nc.Dataset(Filepath)
+print(ncData.variables.keys())
+s = input("Which one do you want to extract :")
+print(s)
+data = np.array(ncData.variables[s][:])
+print(data.shape)
+scler = preprocessing.MaxAbsScaler()
+for i in range(data.shape[0]):
+    data[i] = scler.fit_transform(data[i])
+np.save(s, data)
