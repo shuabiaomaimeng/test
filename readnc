@@ -5,7 +5,10 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/shuabiaomaimeng/shuabiaomaimeng.git
 git push -u origin main
-
+root = tk.Tk()
+root.withdraw()
+Filepath = filedialog.askopenfilename()  # 获得选择好的文件
+print('Filepath:', Filepath)
 ncData = nc.Dataset(Filepath)
 print(ncData.variables.keys())
 s = input("Which one do you want to extract :")
